@@ -275,7 +275,7 @@ void PriceLevelUpdateMessage::Print() const {
   IEX_LOG("Message type      : " << MessageTypeToString(message_type));
   IEX_LOG("Timestamp         : " << timestamp);
   IEX_LOG("Symbol            : " << symbol);
-  IEX_LOG("Flag              : " << PRINTHEX(flags));
+  IEX_LOG("Flag              : " << flags);
   IEX_LOG("Size              : " << size);
   IEX_LOG("Price             : " << price);
 }

@@ -1,4 +1,6 @@
 build
 3rdparty
-
+data
+data/*
 *.swp
+quotes.csv
