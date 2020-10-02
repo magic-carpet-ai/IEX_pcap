@@ -1,3 +1,36 @@
+# STORE IEX ORDERBOOK TO MCAI DATABASE
+quick prototype:
+
+1. download DEEP data from here: https://iextrading.com/trading/market-data/
+
+2. Store data in /data/
+
+4. build:
+```
+mkdir build
+cd build
+cmake .. && make
+```
+
+5. modifiy run.sh
+```
+head=202009 --->> year and month
+tail=_IEXTP1_DEEP1.0.pcap  -->> descritpions
+
+for value in 21 22 23 24 25  --->>> days to iterate over
+do
+    echo $head$value$tail
+    ./build/csv_example data/$head$value$tail
+    python store_to_database.py
+done
+```
+
+6. run bash script = ./run.sh
+explanation: ./build/csv_example 20200930_IEXTP1_TOPS1.6.pcap --> Creates a csv name "quotes.csv" with the orderbook data
+
+store_to_database.py --->> inserts the CSV into database on rocinante. Check scripts to do modifications.
+
+
 # IEX_pcap
 C++ library for decoding stock market data from pcap files available from the IEX exchange.
 
