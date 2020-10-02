@@ -7,10 +7,10 @@ from pathos.multiprocessing import ProcessingPool as Pool
 
 ### Database #################################################################################################################
 def get_cursor_raw():
-    host = "10.100.100.2"
-    database = "stocks"
-    user = "mcai_dcb_write"
-    port = 5432
+    host = ""
+    database = ""
+    user = ""
+    port = 0
     connection = psycopg2.connect(host=host,
                                   database=database,
                                   user=user,
